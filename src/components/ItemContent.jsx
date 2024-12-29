@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faTrash, faPen, faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 import { faCircleCheck as faCircleCheckSolid } from '@fortawesome/free-solid-svg-icons';
 import { faCircleCheck as faCircleCheckRegular } from '@fortawesome/free-regular-svg-icons';
@@ -16,6 +15,7 @@ function ItemContent({content , remove ,onDragStart, onDrop, onDragOver}){
     }
 
     const handleEdit = () => {
+        if(isDone) return
         setIsEditing(!isEditing);
     };
     
@@ -24,7 +24,7 @@ function ItemContent({content , remove ,onDragStart, onDrop, onDragOver}){
     };
     
     return(
-        <li className={`todo draggable ${isDone ? 'done' : ''}`} draggable="true"
+        <li className={`todoItem draggable ${isDone ? 'done' : ''}`} draggable="true"
             onDragStart={onDragStart} 
             onDragOver={onDragOver}
             onDrop={onDrop}

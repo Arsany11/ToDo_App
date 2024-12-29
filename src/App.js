@@ -15,7 +15,7 @@ setListOfItem({items:[...listofItems.items, { id: listofItems.nextId, content: n
   nextId: listofItems.nextId + 1
 });
 }
-const removeItem = (id) => {
+const removeToDoItem = (id) => {
   setListOfItem({...listofItems,
     items:listofItems.items.filter((item) => item.id !== id)});
 }
@@ -25,7 +25,7 @@ const removeItem = (id) => {
     <>
       <Input addItem={addItem}/>
       {/* will cerate a use state cary array that carry the items and add each item it by spread operator ... then map this list and path the content to item conponent */}
-      <Items items={listofItems.items} removeItem ={removeItem} setListOfItems={setListOfItem}/>
+      <Items items={listofItems.items} removeItem ={removeToDoItem} setListOfItems={setListOfItem}/>
     </ >
   );
 }

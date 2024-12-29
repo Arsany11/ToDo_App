@@ -5,7 +5,7 @@ import ItemContent from "./ItemContent";
 function Items({items , removeItem , setListOfItems}) {
     const [draggableItemId, setDraggableItemId] = useState(null)
     
-    const handleDragStart = (e, itemId) => {
+    const handleDragStart = (e, itemId, targetId) => {
         setDraggableItemId(itemId);
     }
     const handleDragOver = (e) => {

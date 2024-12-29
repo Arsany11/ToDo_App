@@ -4,7 +4,6 @@ function Input({addItem}) {
 const [item , setItem] = useState('')
 function handleAddItem(e){
     e.preventDefault()
-console.log(item);
     if (item.trim()) {
         addItem(item); 
         setItem('')
@@ -22,7 +21,7 @@ return(
             value={item}
             onChange={handleChange}
             />
-            <button id="add" type="submit">+</button>
+            <button id="addToDO" type="submit">+</button>
     </form>
     );
 
