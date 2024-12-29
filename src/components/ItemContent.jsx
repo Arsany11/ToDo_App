@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faTrash, faPen, faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 import { faCircleCheck as faCircleCheckSolid } from '@fortawesome/free-solid-svg-icons';
 import { faCircleCheck as faCircleCheckRegular } from '@fortawesome/free-regular-svg-icons';
+import Icon from './Icon';
 
 function ItemContent({content , remove ,onDragStart, onDrop, onDragOver}){
 
@@ -28,10 +29,10 @@ function ItemContent({content , remove ,onDragStart, onDrop, onDragOver}){
             onDragOver={onDragOver}
             onDrop={onDrop}
         >
-        <FontAwesomeIcon icon={faList} className="listIcon" />
-        <FontAwesomeIcon icon={isDone ? faCircleCheckSolid : faCircleCheckRegular}
+        <Icon icon={faList} className="listIcon" />
+        <Icon icon={isDone ? faCircleCheckSolid : faCircleCheckRegular}
         className="checkIcon" onClick={handleCheck} />
-        <FontAwesomeIcon icon={faTrash} className="trashIcon" onClick={remove} />
+        <Icon icon={faTrash} className="trashIcon" onClick={remove} />
         {isEditing ? (
         <input
             type="text"
@@ -45,7 +46,7 @@ function ItemContent({content , remove ,onDragStart, onDrop, onDragOver}){
             {itemContent}
         </span>
         )}
-        <FontAwesomeIcon icon={isEditing ? faFloppyDisk : faPen}
+        <Icon icon={isEditing ? faFloppyDisk : faPen}
             className="editIcon" onClick={handleEdit}/>
     </li>
     )
